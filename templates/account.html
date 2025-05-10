@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+	<h1> User Information </h1> 
+	<h2> Name:{{ name }}</h2> 
+	<h2> Email:{{ email }}</h2> 
+	<h2> Phone:{{ phone }}</h2> 
+	<br></br> 
+	
+	<h1> Group Information </h1> 
+		
+		{% if groups == "None" %} 
+		<h2> You currently have no groups, do you want to <a href='/c'>create</a> one?</h2>
+		{% else %} 
+			{% for group in groups %}
+				<h2><a href='/Group/{{group[0]}}' style='color:black'><u>Name: {{ group[0] }}</u></a></h2> 
+				<h2>Sign Ups: {{ group[1] }}</h2>
+				
+			{% endfor %} 
+		{% endif %} 
+		
+	<h1>Groups you are in: </h1> 
+	{% if signUps == 'None' %} 
+		<h2> You are currently not apart of any group </h2> 
+	{% else %} 
+		 
+		{% for grp in signUps %}
+		<h2><a href='/Group/{{grp[0]}}' style='color:black'>- <u>{{ grp[0] }}</u> (Leader: {{grp[1]}})</a></h2>
+		
+		{% endfor %}
+		
+	{% endif %}
+	<br></br>
+	<a href='/' class='return'>Back to Home</a>
+</body>
+</html> 

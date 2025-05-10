@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+	<h1> Account Sign in Page  </h1> 
+	<h2> Please Create an account before Creating / Joining a group! </h2>
+	
+	{% if error %}
+		<p class ='error'> Error! Email is already in use! </p> 
+	{% endif %} 
+	<form method = 'POST'> 
+		<input type='hidden' name='ID' id='ID' value={{ sID }}>
+		
+		<label for='name'> Preferred Name </label> 
+		<input type='text' id='name' name='name'>
+		<br></br>
+		
+		<label for='phone'> Phone Number </label>
+		<input type='tel' id='number' name='number'>
+		<br></br>
+		
+		<label for='email'> Email </label> 
+		<input type='email' id='email' name='email'>
+		<br></br>
+		
+		<label for='password'> Password </label> 
+		<input type='password' id='pw' name='pw'> 
+		<br></br>
+		
+		<input type='submit'>
+		<button class='redirect'><a href='/LogIn'> Already have an account? </a></button> 
+	</form> 
+</body>
+</html> 

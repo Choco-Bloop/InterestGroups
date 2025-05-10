@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+	<button class='logout'><a href='/LogOut'> Log Out </a></button>
+	<a href='/' class='return'>Return to Home</a>
+	<h1> Find an Interest Group! </h1> 
+	<h4 class='filter'><a href='/Filter'><u> Filter </u></a></h4>
+	
+	{% for group in groups %} 
+	<div class='gList'>
+		<p> Group Name: {{ group[1] }} </p>
+		<p> Summary: {{ group[2] }} </p>
+		<p><a href='/Group/{{group[1]}}'> Want to know more? </a></p>
+	</div>
+	{% endfor %}
+
+	<a href='/' class='return'>Return to Home</a>
+	<br></br>
+</body>
+</html> 

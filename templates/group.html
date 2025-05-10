@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+	<button class='logout'><a href='/LogOut'> Log Out </a></button>
+
+	{% if curr == leader %} 
+		<a href='/Update' class = 'return'>Update Group Information?</a> 
+	{% else %} 
+		{% if curr in signUp %} 
+			<a href='/leave' class='return'>Leave Group?</a>
+		{% else %}
+			<a href='/Join' class = 'return'>Join Group?</a>
+		{% endif %}
+	{% endif %} 
+	<br></br> 
+	<br></br> 
+	<div class = 'grp'>
+		<h1><u>{{ name }}</u></h1>
+		<h2> Leader: {{ leader }} </h2>
+		<h2> Email: {{ email }} 
+		<h2> Day(s): {{ days }}</h2>
+		<h2> Timing: {{ timing }}</h2> 
+		<br></br> 
+		<h2> More about us! </h2>
+		<h3 class='info'> {{ summary }} </h3>
+	</div> 
+	<br></br>
+	<h2> Other people who have signed up: {{ signUp }} </h2> 
+	</br></br> 
+	<a href='/Find' class='return'>Go Back?</a>
+</body>
+</html> 

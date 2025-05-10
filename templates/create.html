@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+<h1> Create a group! </h1> 
+ 
+	<form method='POST'> 
+		<input type='hidden' id='number' name='number' value={{ gID }}>
+		<input type='hidden' id='leaderNo' name='leaderNo' value={{ lID}}> 
+		
+		<label id='gName' name='gName' class='create'> What is the name of your group? </label> 
+			<textarea name='gName' rows='2' cols='50'> Group name goes here... </textarea>
+		
+		<label id='category' name='category' class='create'> What Category does this group fall under? </label>
+			<input type='radio' class='Cat' value = 'Acads' name='cat'> Academic Related </option> 
+			<input type='radio' class='Cat' value = 'Arts' name='cat'> The Arts </option> 
+			<input type='radio' class='Cat' value = 'Misc' name='cat'> Miscellaneous </option> 
+		
+		<label class='create' name='day'> Which days do you meet up on? </label> 
+			<input type='checkbox' name='day' value='M' > Monday
+			<input type='checkbox' name='day' value='T' > Tuesday
+			<input type='checkbox' name='day' value='W' > Wednesday
+			<input type='checkbox' name='day' value='Th'> Thursday
+			<input type='checkbox' name='day' value='F' > Friday
+		
+		<label class='create' name='timings'> What is the timing of your meetings? </label>
+			<input list='timings' name='timings'> 
+			<datalist id='timings' name='timings'> 
+				<option value='10:00'> 
+				<option value='11:00'>
+				<option value='12:00'>
+				<option value='13:00'>
+				<option value='14:00'>
+				<option value='15:00'>
+				<option value='16:00'>
+				<option value='17:00'>
+				<option value='18:00'>
+				<option value='19:00'>
+				<option value='20:00'>
+				<option value='21:00'>
+				<option value='22:00'>
+			</datalist>
+			
+		<label class='summary'> Quick Summary of the Group: </label> 
+			<textarea name='summary' rows='5' cols='80'>quick summary goes here...</textarea>
+		<br></br> 
+		<input type='submit' action='/find.html'> 
+	</form> 
+	<br></br> 
+	<br></br> 
+	<a href='/' class='return'> Back to Home? </a>
+</body>
+</html> 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+<body>
+	<button class='logout'><a href='/LogOut'> Log Out </a></button>
+	<h1> Update Group Information </h1> 
+	<form method="POST">
+		<label id='gName' name='gName' class='create'> What is the name of your group? </label> 
+			<textarea name='gName' rows='2' cols='50'>{{ name }}</textarea>
+		
+		<label id='category' name='category' class='create'> What Category does this group fall under? </label>
+			{% if cate == 'Acads' %} 
+				<input type='radio' value = 'Acads' name='cat' checked> Academic Related </option> 
+				<input type='radio' value = 'Arts' name='cat'> The Arts </option> 
+				<input type='radio' value = 'Misc' name='cat'> Miscellaneous </option>
+			{% elif cate == 'Arts' %} 
+				<input type='radio' value = 'Acads' name='cat'> Academic Related </option> 
+				<input type='radio' value = 'Arts' name='cat' checked> The Arts </option> 
+				<input type='radio' value = 'Misc' name='cat'> Miscellaneous </option>
+			{% else %}
+				<input type='radio' value = 'Acads' name='cat'> Academic Related </option> 
+				<input type='radio' value = 'Arts' name='cat'> The Arts </option> 
+				<input type='radio' value = 'Misc' name='cat' checked> Miscellaneous </option>
+			{% endif %} 
+			
+		<label name='day' class='create'> Which day(s) does this group meet on? </label>
+			{% for day in dayLst %} 
+				
+				{% if day in days %} 
+					<input type='checkbox' value={{day}} name='day' checked> {{ day }}</option> 
+				{% else %} 
+					<input type='checkbox' value={{day}} name ='day'> {{ day }}</option>
+				{% endif %} 
+				
+			{% endfor %} 
+		
+		<label class='create' name='timings'> What is the timing of your meetings? </label>
+			<input list='timings' name='timings' placeholder={{ timing }}> 
+			<datalist id='timings' name='timings'> 
+				<option value='10:00'> 
+				<option value='11:00'>
+				<option value='12:00'>
+				<option value='13:00'>
+				<option value='14:00'>
+				<option value='15:00'>
+				<option value='16:00'>
+				<option value='17:00'>
+				<option value='18:00'>
+				<option value='19:00'>
+				<option value='20:00'>
+				<option value='21:00'>
+				<option value='22:00'>
+			</datalist>
+			<p> PS: Don't forget to refill your timing! The greyed out numbers is what was originally set</p>
+		<label class='summary'> Quick Summary of the Group: </label> 
+			<textarea name='summary' rows='5' cols='80'>{{ summ }}</textarea>
+		<br></br> 
+			
+		<input type='submit' action='/find.html'> 
+	</form> 
+	<br></br>
+	<br></br>
+	<a href='/Group/{{name}}' class='return'> Back to Group Page?</a>
+	<a href='/' class='return'> Back to Home? </a>
+</body>
+</html> 

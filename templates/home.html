@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head>
+	<body>
+	<h1> Interest Group Finder ! </h1> 
+	
+	{% if status %}
+		<h3> Welcome {{ acc }}! </h3> 
+		<h3><a href='/account' style='color:black'> See Account Info? </a></h3>
+	{% else %}
+		<h3> You are currently not logged in</h3>
+		<h5 style='font-size:18px;'><a href='/LogIn'> Log in? </a></h5>
+	{% endif %} 
+	
+	{% if update %} 
+		<p> Group Information successfully updated! </p> 
+	{% endif %}
+	
+	{% if join == True %} 
+		<p> Successfully joined group! </p> 
+	{% elif join == 'Error' %} 
+		<p class='error'> Error: Already in group! </p> 
+	{% endif %} 
+	
+	{% if leave == True %} 
+		<p> Left group. </p> 
+	{% elif leave == "Error" %} 
+		<p class='error'> Error: Not in group, cannot leave! </p> 
+	{% endif %} 
+
+	<h2> What do you wish to do today ? </h2>
+	
+	<br></br> 
+	<br></br> 
+	<form>
+		<button><a href='/Find'> Find a group! </a></button>
+		{% if status %}
+			<button><a href='/c'> Create a group! </a></button>
+		{% else %} 
+			<button><a href='/LogIn'> Create a group! </a></button>
+		{% endif %}
+	</form>
+
+	{% if status %}
+		<button class='logout'><a href='/LogOut'> Log Out </a></button>
+	{% endif %} 
+</body>
+</html> 

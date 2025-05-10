@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<link rel="stylesheet" 
+	href='../static/style.css'>
+</head> 
+<body>
+	<h1> Filter </h1> 
+	
+	<h2> How do you wish to sort your data? </h2> 
+	<p> If you do not wish to filter, please click 'N/A' </p>
+	
+	<form method='POST'>
+	
+		<label class='create' name='category'> Category </label> 
+			{% for cat in Categories %} 
+			<input type='radio' class='category' value={{ cat }} name = 'category'> {{ cat }} </option> 
+			{% endfor %}
+			<input type='radio' class='category' value=None name='category'> N/A </option> 
+			
+		<label class = 'create' name='day'> Day </label> 
+		{% for day in Days %} 
+			<input type='radio' name='day' class='day' value={{ day }}> {{ day }} </option> 
+		{% endfor %}
+		<input type='radio' class='day' value=None name='day'> N/A </option> 
+	
+		<label class='create' name='timings' id='timings'> Time </label> 
+		{% for time in Time %} 
+			<input type ='checkbox' name='timings' value = {{ time }}> {{ time }} </option> 
+		{% endfor %} 
+			<input type='radio' class='timings' value=None name='timings'> N/A </option> 
+		
+		<input type='submit'><a href='/Find'></a> 
+	</form>
+	<br></br> 
+	<br></br> 
+	<br></br> 
+	<a href='/' class='return'>Return to Home</a>
+	<a href='/Find' class='return'>Go back to Find</a>
+</body>
+</html> 
