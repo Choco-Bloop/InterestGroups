@@ -1,0 +1,1 @@
+Folder for all the templates used in app.py
