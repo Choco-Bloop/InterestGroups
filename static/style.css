@@ -1,0 +1,130 @@
+h1 { 
+	
+	text-align:center;
+	font-size: 40px;
+}
+body { 
+	background-color: aliceblue;
+	font-family:monospace;
+	text-align: center;
+}
+button { 
+	padding: 20px; 
+	border-radius: 10px;
+	font-size: 50px; 
+	background-color: rgb(47, 51, 50);
+	color:rgb(56, 133, 104);
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 80px;
+}
+button:hover {
+	background-color: darkgrey;
+	color: rgb(87, 91, 90);
+}
+.redirect { 
+	border: 0.01px solid grey; 
+	border-radius: 2px;
+	font-size: 15px;
+	padding: 5px;
+	border-radius: 0px;
+	margin-top: 20px;
+	background-color: rgb(240, 240, 240);
+	color: black;
+}
+a { 
+	text-decoration:none;
+	color:rgb(56, 133, 104);
+}
+h3 { 
+	border: 3px solid navy; 
+	border-radius: 7px; 
+	width: 25%;
+	font-size: 25px;
+	margin-right: auto;
+	margin-left: auto;
+}
+input { 
+	text-align: center;
+	font-size: 15px;
+}
+.summary { 
+	display: block;
+	font-size: 15px; 
+	text-align: center;
+	padding-top: 40px;
+}	
+option { 
+	padding: 10px; 
+	border: 1px solid black;
+}
+.create { 
+	display: block;
+	font-size: 20px; 
+	padding-bottom: 10px;
+	padding-top: 40px;
+}
+.first { 
+	display: block;
+	font-size: 20px; 
+	padding-bottom: 10px;
+}
+.error { 
+	color: red; 
+}
+.gList { 
+	width: 80%;
+	border: 5px solid rgb(18, 161, 144);
+	border-radius: 5px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #FFFEF7;
+	font-size: 25px;
+	font-family: 'Trebuchet MS', sans-serif;
+}
+.info { 
+	font-weight: light;
+	font-size: 20px;
+	padding: 15px;
+	background-color: #00A896;
+	color: black;
+	border: 2px solid #00A896;
+	border-radius: 10px;
+}
+.grp { 
+	display: block;
+	width: 80%;
+	background-color: #084887;
+	text-align:center;
+	margin:0 auto;
+	padding: 20px;
+	color: white;
+	border: 2px solid #084887;
+	border-radius: 10px;
+}
+.return { 
+	font-size: 25px;
+	padding: 10px;
+	border: 3px solid black;
+	border-radius: 5px;
+	margin: 10px;
+}
+.filter {
+	font-size: 20px;
+	color: black;
+}
+.logout { 
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 0px;
+	margin-bottom: 5px;
+}
+.error { 
+	color: red;
+}
+\
