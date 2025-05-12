@@ -94,8 +94,8 @@ def SignIn():
         match = False
         cursor = db.execute('Select Email from Students')
         lst = cursor.fetchall()
-        for item[0] in lst:
-            if item == email:
+        for item in lst:
+            if item[0] == email:
                 match = True
 
         if match == True:
