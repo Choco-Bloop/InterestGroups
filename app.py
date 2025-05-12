@@ -103,7 +103,7 @@ def SignIn():
 
         # 2) Add the new information
         else: 
-            db.execute('INSERT INTO Students(ID,Name,Email,Password,Phone,SignUps) VALUES(?,?,?,?,?,?)', (currID,name,email,pw,phone,su))
+            db.execute('INSERT INTO Students(ID,Name,Email,Password,Phone) VALUES(?,?,?,?,?)', (currID,name,email,pw,phone))
             db.commit() # Can't forget to save changes 
         db.close()
         
