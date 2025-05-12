@@ -94,12 +94,12 @@ def SignIn():
         match = False
         cursor = db.execute('Select Email from Students')
         lst = cursor.fetchall()
-        for item in lst:
+        for item[0] in lst:
             if item == email:
                 match = True
 
         if match == True:
-            return render_template('login.html', error = True)
+            return render_template('signin.html', error = True)
 
         # 2) Add the new information
         else: 
